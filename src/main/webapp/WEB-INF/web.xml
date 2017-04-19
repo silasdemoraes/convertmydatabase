@@ -5,4 +5,11 @@
             30
         </session-timeout>
     </session-config>
+    <welcome-file-list>
+        <welcome-file>index</welcome-file>
+    </welcome-file-list>
+    <servlet-mapping>
+        <servlet-name>index</servlet-name>
+        <url-pattern></url-pattern>
+    </servlet-mapping>
 </web-app>
