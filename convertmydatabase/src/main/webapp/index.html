@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Convert My Database</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" crossorigin="anonymous">
+
+        <!-- Optional theme -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" crossorigin="anonymous">
+
+    </head>
+    <body class="container-fluid" ng-app="app" ng-controller="myCtrl">
+        <h1>Convert Database</h1>
+        <form action="action">
+            <div class="col-md-12">
+                <div class="col-md-3"></div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="mysql">MySql text</label>
+                        <textarea class="form-control" id="mysql" placeholder="MySql"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="postgres">Postgres text</label>
+                        <textarea class="form-control" id="postgres" placeholder="Postgres"></textarea>
+                    </div>
+                </div>
+                <div class="col-md-3"></div>
+            </div>
+            <div class="col-md-12">
+                <button type="button" class="btn btn-primary btn-lg btn-block">Converter</button>
+            </div>
+        </form>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <!-- Latest compiled and minified JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" crossorigin="anonymous"></script>
+        <script src="/js/app.js" ></script>
+    </body>
+</html>
