@@ -51,7 +51,7 @@
                     </execution>
                 </executions>
             </plugin>
-            <plugin>
+            <!--<plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-war-plugin</artifactId>
                 <version>2.3</version>
@@ -107,17 +107,17 @@
                         <arquillian.server>192.168.1.81</arquillian.server>
                     </systemPropertyVariables>
                 </configuration>
-            </plugin>
+            </plugin>-->
 			
-            <plugin>
+<!--            <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-failsafe-plugin</artifactId>
                 <version>2.18</version>
                 <executions>
-                    <!--
+                    
                         Invokes both the integration-test and the verify goals of the
                         Failsafe Maven plugin
-                    -->
+                    
                     <execution>
                         <id>integration-tests</id>
                         <goals>
@@ -125,10 +125,10 @@
                             <goal>verify</goal>
                         </goals>
                         <configuration>
-                            <!--
+                            
                                 Skips integration tests if the value of skip.integration.tests
                                 property is true
-                            -->                                                                      
+                                                                                                  
                             <skipTests>${skipIntegrationTests}</skipTests>
                             <excludes>
                                 <exclude>**/*Test.java</exclude>
@@ -136,9 +136,9 @@
                         </configuration>
                     </execution>
                 </executions>
-            </plugin>
+            </plugin>-->
 
-            <plugin>
+<!--            <plugin>
                 <groupId>org.jacoco</groupId>
                 <artifactId>jacoco-maven-plugin</artifactId>
                 <version>0.7.6.201602180812</version>
@@ -150,10 +150,10 @@
                         </goals>
                     </execution>
                 </executions>
-            </plugin>
+            </plugin>-->
         </plugins>
     </build>
-    
+<!--    
     <reporting>
         <plugins>
             <plugin>
@@ -167,7 +167,7 @@
                             <ignore>test.package.if.needed.later.*</ignore>
                         </ignores>
                         <excludes>
-                            <!-- eg.: -->
+                             eg.: 
                             <exclude>javax/**/*.class</exclude>
                         </excludes>
                     </instrumentation>
@@ -179,6 +179,6 @@
                 </configuration>
             </plugin>
         </plugins>
-    </reporting>
+    </reporting>-->
 
 </project>
