@@ -18,7 +18,7 @@ public class SqlUtilTest {
     @Before
     public void setUp() {
         sqlUtil = new SqlUtil();
-        this.sql = "-- MySQL Workbench Forward Engineering\n";
+        this.sql = "SCRIPT SQL";
     }
 
     @Test

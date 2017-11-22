@@ -36,6 +36,10 @@ public class SqlUtil {
                 trataUse(sb, line);
                 continue;
             }
+            if (isValue(line, "INSERT")) {
+                trataInsert(sb, line);
+                continue;
+            }
         }
 
         return sb.toString();
@@ -66,6 +70,16 @@ public class SqlUtil {
                 }
                 tableLine = tableLine.replace("TINYINT(1)", "BOOLEAN");
                 tableLine = tableLine.replace("INT NOT NULL AUTO_INCREMENT", "SERIAL");
+                tableLine = tableLine.replace("DATETIME", "TIMESTAMP");
+                tableLine = tableLine.replace("DOUBLE", "FLOAT");
+                tableLine = tableLine.replace("BOOLEAN NOT NULL DEFAULT 0", "BOOLEAN NOT NULL DEFAULT false");
+                tableLine = tableLine.replace("BOOLEAN NOT NULL DEFAULT 1", "BOOLEAN NOT NULL DEFAULT true");
+                
+                if (tableLine.contains("COMMENT")) {
+                    tableLine = tableLine.substring(1, tableLine.indexOf("COMMENT")) + ',';
+                }
+                
+                
                 table.append("\n");
                 table.append(tableLine);
             }
@@ -99,5 +113,13 @@ public class SqlUtil {
 
     private static boolean isComment(String line) {
         return line.trim().startsWith("--");
+    }
+
+    private void trataInsert(StringBuilder sb, String line) {
+        String[] vet = line.split("VALUES");
+        vet[0] = vet[0].replace("`", "");
+        sb.append("\n");
+        vet[1] = vet[1].replace("`", "'");
+        sb.append(vet[0] + " VALUES " + vet[1]);
     }
 }
