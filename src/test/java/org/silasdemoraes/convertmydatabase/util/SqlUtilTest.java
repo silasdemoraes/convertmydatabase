@@ -18,12 +18,14 @@ public class SqlUtilTest {
     @Before
     public void setUp() {
         sqlUtil = new SqlUtil();
-        this.sql = "SCRIPT SQL";
+        this.sql = "";
     }
 
     @Test
     public void mysqlToPostgresTest() {
-        sqlUtil.mysqlToPostgres(sql);
+        String returno = sqlUtil.mysqlToPostgres(sql);
+
+        System.out.println(returno);
     }
 
 }

@@ -68,6 +68,7 @@ public class SqlUtil {
                 } else if (isValue(tableLine, "INDEX")) {
                     continue;
                 }
+                tableLine = tableLine.replace("TINYINT", "BOOLEAN");
                 tableLine = tableLine.replace("TINYINT(1)", "BOOLEAN");
                 tableLine = tableLine.replace("INT NOT NULL AUTO_INCREMENT", "SERIAL");
                 tableLine = tableLine.replace("DATETIME", "TIMESTAMP");
